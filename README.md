@@ -1,5 +1,5 @@
 # Le Bon Sandwich TD
-Ce projet permet intéragir un service de prise de commande, un service de suivi de fabrication, un service catalogue et sa partie front-end, un service d'authentification, et une gateway.
+Ce projet fait intéragir un service de prise de commande, un service de suivi de fabrication, un service catalogue et sa partie front-end, un service d'authentification, et une gateway.
 
 ## Membres du groupe:
 - Youssef Bahi (youssef.bahi1@etu.univ-lorraine.fr)
