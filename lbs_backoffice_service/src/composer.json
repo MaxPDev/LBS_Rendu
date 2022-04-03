@@ -1,0 +1,17 @@
+{
+
+  "require" : {
+    "php": ">=7.4",
+    "slim/slim": "3.*",
+    "illuminate/database":"^8.83",
+    "monolog/monolog" : "^2.3.0",
+    "guzzlehttp/guzzle": "^7.4"
+  },
+  "autoload": {
+    "psr-4" : {
+      "lbs\\backoffice\\" : "."
+
+    }
+
+  }
+}

@@ -133,7 +133,7 @@ class AuthController
             $data = [
                 'user-mail' => $token->upr->email,
                 'user-username' => $token->upr->username,
-                'user-level' => $token->upr->level,
+                'user_level' => $token->upr->level,
             ];
 
             return $jsonResp->buildResp($req, $res, 200, $data);

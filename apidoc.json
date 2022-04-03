@@ -1,0 +1,6 @@
+{
+  "name" : "Le Bon Sandwich : api pour appli cliente",
+  "description" : "api pour la commande de sandwichs chez Le Bon Sandwich",
+  "title": "lbs : api",
+  "version" : "0.1.0"
+}

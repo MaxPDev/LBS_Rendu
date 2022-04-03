@@ -35,7 +35,9 @@ services:
       - './lbs_commande_service/src:/var/www/src'
     working_dir: /var/www/src
     networks:
-      - lbs.net
+      lbs.net:
+        aliases:
+          - api.commande.local
     depends_on:
       - mysql.commande
 
@@ -56,7 +58,9 @@ services:
       - './lbs_fabrication_service/log:/var/log/app'
     working_dir: /var/www/src
     networks:
-      - lbs.net
+      lbs.net:
+        aliases:
+          - api.fabrication.local
     depends_on:
       - mysql.commande
 
@@ -109,7 +113,9 @@ services:
       - './lbs_authentification_service/src:/var/www/src'
     working_dir: /var/www/src
     networks:
-      - lbs.net
+      lbs.net:
+        aliases:
+          - api.auth.local
     depends_on:
       - mysql.users
 
@@ -190,3 +196,27 @@ services:
     working_dir: /var/www/src
     networks:
       - lbs.net
+
+# service api.suivi.fabrication : api backoffice pour le suivi de fabrication
+  #  commandes
+  #
+  api.backoffice:
+    image: 'canals/php:latest'
+    environment:
+      - VHOST_HOSTNAME=api.backoffice.local
+      - VHOST_DOCROOT=/var/www/pub
+    ports:
+      - '20080:80'
+      - '20043:443'
+    volumes:
+      - './lbs_backoffice_service/pub:/var/www/pub'
+      - './lbs_backoffice_service/src:/var/www/src'
+      - './lbs_backoffice_service/log:/var/log/app'
+    working_dir: /var/www/src
+    networks:
+      lbs.net:
+        aliases:
+          - api.backoffice.local
+    depends_on:
+      - mysql.commande
+      - mysql.users
