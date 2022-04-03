@@ -1,0 +1,23 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+	{% if categories|length > 0 %}
+	<ul class="tilesWrap">
+		{% for key, c in categories %}
+		<li>
+			<h2>{{key +1}}</h2>
+			<h3>{{c.libelle}}</h3>
+			<p>
+				{{c.description}}
+			</p>
+			<a href="{{ root_uri }}/categories/{{c.id}}">
+				<button type="button">Read more</button>
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+
+	{% else %}
+		<h3>No categories found</h3>
+	{% endif %}
+
+{% endblock %}

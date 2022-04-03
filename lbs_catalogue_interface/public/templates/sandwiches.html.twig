@@ -1,0 +1,22 @@
+{% extends "layout.html.twig" %}
+{% block content %}
+	{% if sandwiches|length > 0 %}
+	<ul class="tilesWrap">
+		{% for key, c in sandwiches %}
+		<li>
+			<h2>{{key +1}}</h2>
+			<h3>{{c.libelle}}</h3>
+			<p>
+				{{c.description}}
+			</p>
+			<h3>{{c.prix|number_format(2)}} €</h3>
+		</li>
+		{% endfor %}
+	</ul>
+
+	{% else %}
+		<h3>No sandwiches found</h3>
+	{% endif %}
+	<a class="back" href="{{ root_uri }}/categories"> Go back</a>
+
+{% endblock %}
